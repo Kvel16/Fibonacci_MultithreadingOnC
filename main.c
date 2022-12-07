@@ -1,7 +1,6 @@
-// Programa Solucion 2 (TAREA)
 /**
  * Este programa calcula sobre cada uno de los enteros de un vector su
- * fibonacci.
+ fibonacci.
  * Integrantes:
     - Alejandro Tapiero (2043737)
     - Marcelo García Millán (1941427)
@@ -15,7 +14,10 @@
 #include <sys/sysinfo.h>
 #include <time.h>
 #define max_random(min, max) min + rand() % (max + 1 - min)
-#define printf_vector(v, n)  for(i = 0; i < n; i++){printf("%d ", v[i]);}             
+#define printf_vector(v, n)                                                    \
+  for (i = 0; i < n; i++) {                                                    \
+    printf("%d ", v[i]);                                                       \
+  }
 #define println printf("\n")
 #define CONSTANTE 5
 
@@ -93,7 +95,7 @@ void *fibonacci_over_vector(void *pos) {
   printf("Posicion %d con el stride %d [%d]\n", thread_id, stride, i);
 
   for (contador = 0; contador < i; contador++) {
-    vector[contador-1] = fibonacci(vector[i]);
+    vector[contador - 1] = fibonacci(vector[i]);
   }
   return NULL;
 }
